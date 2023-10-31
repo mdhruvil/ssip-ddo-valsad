@@ -18,4 +18,10 @@ function RecentlyViewed({}: Props) {
   );
 }
 
+type TIleProps = {};
+
+function RecentlyViewedTile({}: Props) {
+  return <div>RecentlyViewed</div>;
+}
+
 export default RecentlyViewed;
