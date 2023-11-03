@@ -44,28 +44,35 @@ export const schemes = sqliteTable(
   "scheme",
   {
     id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
-    name: text("name"),
+    name: text("name").notNull(),
     createdAt: integer("createdAt", { mode: "timestamp" })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
-    details: text("details"),
-    benefits: text("benefits"),
-    eligibility: text("eligibility"),
+    details: text("details").notNull(),
+    benefits: text("benefits").notNull(),
+    eligibility: text("eligibility").notNull(),
     lastDate: integer("lastDate", { mode: "timestamp" }).notNull(),
-    applicationProcess: text("applicationProcess"),
-    requiredDocs: text("requiredDocs"),
-    portalLink: text("portalLink"),
-    gender: text("gender", { enum: ["male", "female", "all"] }),
-    maritalStatus: text("maritalStatus", { enum: ["married", "unmarried"] }),
-    category: text("category", { enum: ["General", "OBC", "SC", "ST"] }),
-    schemeImage: text("schemeImage"),
+    applicationProcess: text("applicationProcess").notNull(),
+    requiredDocs: text("requiredDocs").notNull(),
+    portalLink: text("portalLink").notNull(),
+    gender: text("gender", { enum: ["male", "female", "all"] }).default("all"),
+    maritalStatus: text("maritalStatus", {
+      enum: ["married", "unmarried", "all"],
+    }).default("all"),
+    category: text("category", {
+      enum: ["General", "OBC", "SC", "ST", "all"],
+    }).default("all"),
+    schemeImage: text("schemeImage").notNull(),
+    department: text("department").default("DDO-Valsad").notNull(),
   },
   (scheme) => ({
     schemeCreatedAtIdx: index("schemeCreatedAtIdx").on(scheme.createdAt),
     genderIdx: index("genderIdx").on(scheme.gender),
     maritalStatusIdx: index("maritalStatus").on(scheme.maritalStatus),
     categoryIdx: index("categoryIdx").on(scheme.category),
-    lastDateIdx: index("lastDate").on(scheme.lastDate),
+    lastDateIdx: index("lastDateTdx").on(scheme.lastDate),
+    nameIdx: index("nameIdx").on(scheme.name),
+    departmentIdx: index("departmentIdx").on(scheme.department),
   }),
 );
 
