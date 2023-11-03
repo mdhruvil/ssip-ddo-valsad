@@ -4,6 +4,7 @@ import {
   HeartIcon,
   MagnifyingGlassIcon,
 } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 type Props = {};
 
@@ -15,7 +16,9 @@ function TopBar({}: Props) {
         <div className="flex gap-5">
           <MagnifyingGlassIcon className="h-5 w-5" strokeWidth={100} />
           <BellIcon className="h-5 w-5" />
-          <HeartIcon className="h-5 w-5" />
+          <Link href="/bookmarks">
+            <HeartIcon className="h-5 w-5" />
+          </Link>
         </div>
       </div>
     </div>

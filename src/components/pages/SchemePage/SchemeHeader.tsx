@@ -5,6 +5,8 @@ import { Button, buttonVariants } from "~/components/ui/button";
 import { Card, CardDescription, CardTitle } from "~/components/ui/card";
 import { cn } from "~/lib/utils";
 import { Scheme } from "~/server/db/schema";
+import BookmardButton from "../shared/BookmardButton";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
 
 type Props = {
   schemeData: Scheme;
@@ -38,14 +40,9 @@ function SchemeHeader({ schemeData }: Props) {
             }),
           )}
         >
-          Apply
+          Apply <ExternalLinkIcon className="ml-2 h-4 w-4" />
         </Link>
-        <Button
-          className="w-full rounded-full text-base text-primary-foreground"
-          variant="outline"
-        >
-          Wishlist
-        </Button>
+        <BookmardButton schemeData={schemeData} />
       </div>
     </div>
   );

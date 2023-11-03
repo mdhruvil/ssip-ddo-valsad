@@ -45,7 +45,7 @@ function SchemeDetails({ schemeData }: Props) {
     <Accordion type="multiple" defaultValue={["details"]}>
       {accordianArr.map((key) => {
         return (
-          <AccordionItem value={key}>
+          <AccordionItem value={key} key={key}>
             <AccordionTrigger className="text-lg font-bold">
               {getAccordianItemText(key)}
             </AccordionTrigger>
