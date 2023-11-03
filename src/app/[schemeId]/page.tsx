@@ -1,6 +1,6 @@
-import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import SchemeDetails from "~/components/pages/SchemePage/SchemeDetails";
 import SchemeHeader from "~/components/pages/SchemePage/SchemeHeader";
+import AddToRecent from "~/components/pages/shared/AddToRecent";
 import BackButton from "~/components/pages/shared/BackButton";
 import { api } from "~/trpc/server";
 
@@ -20,6 +20,7 @@ async function page({ params }: Props) {
 
   return (
     <div>
+      <AddToRecent schemeData={scheme} />
       <div className="bg-primary px-5 py-3">
         <BackButton className="h-6 w-6 text-primary-foreground" />
         <div className="mb-2 mt-3">
