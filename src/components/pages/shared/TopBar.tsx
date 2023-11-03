@@ -1,6 +1,7 @@
 import React from "react";
 import {
   BellIcon,
+  BookmarkIcon,
   HeartIcon,
   MagnifyingGlassIcon,
 } from "@radix-ui/react-icons";
@@ -12,12 +13,14 @@ function TopBar({}: Props) {
   return (
     <div className="h-12 w-full bg-primary text-primary-foreground">
       <div className="container flex h-full items-center justify-between">
-        <div className="text-xl font-bold">SchemEase</div>
+        <Link href="/" className="text-xl font-bold">
+          SchemEase
+        </Link>
         <div className="flex gap-5">
           <MagnifyingGlassIcon className="h-5 w-5" strokeWidth={100} />
           <BellIcon className="h-5 w-5" />
           <Link href="/bookmarks">
-            <HeartIcon className="h-5 w-5" />
+            <BookmarkIcon className="h-5 w-5" />
           </Link>
         </div>
       </div>

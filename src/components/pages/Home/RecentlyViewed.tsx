@@ -2,6 +2,7 @@
 
 import { ChevronRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "~/components/ui/button";
 import { Scheme } from "~/server/db/schema";
@@ -48,20 +49,22 @@ type TileProps = {
 
 function RecentlyViewedTile({ schemeData }: TileProps) {
   return (
-    <div className="text-center">
-      <Image
-        src={schemeData.schemeImage}
-        alt={schemeData.name}
-        className="w-full rounded-lg"
-        width={100}
-        height={100}
-      />
-      <p className="mt-1 text-sm">
-        {schemeData.name?.split(" ").length > 2
-          ? schemeData.name?.split(" ").splice(0, 2).join(" ") + "..."
-          : schemeData.name}
-      </p>
-    </div>
+    <Link href={`/${schemeData.id}`}>
+      <div className="text-center">
+        <Image
+          src={schemeData.schemeImage}
+          alt={schemeData.name}
+          className="w-full rounded-lg"
+          width={100}
+          height={100}
+        />
+        <p className="mt-1 text-sm">
+          {schemeData.name?.split(" ").length > 2
+            ? schemeData.name?.split(" ").splice(0, 2).join(" ") + "..."
+            : schemeData.name}
+        </p>
+      </div>
+    </Link>
   );
 }
 
