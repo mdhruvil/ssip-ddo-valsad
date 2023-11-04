@@ -129,7 +129,7 @@ export default async function Home() {
   return (
     <div>
       <TopBar />
-      <MainCaraousal />
+      {/* <MainCaraousal schemeData={schemes} /> */}
       <RecentlyViewed />
       {/* <Button
         onClick={() => {

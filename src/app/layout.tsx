@@ -4,16 +4,21 @@ import { Inter } from "next/font/google";
 import { headers } from "next/headers";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import { Metadata } from "next";
 
 const inter = Inter({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "ShemEase",
   description:
     "A Central place to know about all schemes by Valsad District Panchayt",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [
+    { rel: "apple-touch-icon", url: "assets/icons/icon-128x128.png" },
+    { rel: "icon", url: "assets/icons/icon-128x128.png" },
+  ],
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({
