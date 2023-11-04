@@ -15,6 +15,18 @@ const config = {
         port: "",
         pathname: "/random/**",
       },
+      {
+        protocol: "https",
+        hostname: "schooleducation.mizoram.gov.in",
+        port: "",
+        pathname: "/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        port: "",
+        pathname: "/wikipedia/**",
+      },
     ],
   },
 };

@@ -1,7 +1,9 @@
+// "use client";
 import MainCaraousal from "~/components/pages/Home/Caraousal";
 import RecentlyViewed from "~/components/pages/Home/RecentlyViewed";
 import SchemeCard from "~/components/pages/Home/SchemeCard";
 import TopBar from "~/components/pages/shared/TopBar";
+import { Button } from "~/components/ui/button";
 import { SchemeInsert } from "~/server/db/schema";
 import { api } from "~/trpc/server";
 
@@ -21,7 +23,7 @@ const scheme: SchemeInsert[] = [
     maritalStatus: "unmarried",
     category: "SC",
     schemeImage:
-      "https://source.unsplash.com/random/300x300?government+schemes",
+      "https://schooleducation.mizoram.gov.in/uploads/attachments/16e79e148218c0afc8b81775c66cf2f1/png.png",
   },
   {
     name: "Digital India",
@@ -40,7 +42,7 @@ const scheme: SchemeInsert[] = [
     maritalStatus: "married",
     category: "SC",
     schemeImage:
-      "https://source.unsplash.com/random/300x300?government+schemes",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Digital_India_logo.svg/800px-Digital_India_logo.svg.png",
   },
   {
     name: "National Rural Employment Guarantee Act (NREGA)",
@@ -58,7 +60,7 @@ const scheme: SchemeInsert[] = [
     maritalStatus: "married",
     category: "ST",
     schemeImage:
-      "https://source.unsplash.com/random/300x300?government+schemes",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Burden_of_life.jpg/220px-Burden_of_life.jpg",
   },
   {
     name: "Beti Bachao, Beti Padhao",
@@ -75,7 +77,7 @@ const scheme: SchemeInsert[] = [
     maritalStatus: "unmarried",
     category: "ST",
     schemeImage:
-      "https://source.unsplash.com/random/300x300?government+schemes",
+      "https://upload.wikimedia.org/wikipedia/en/8/8c/Beti_Bachao_Beti_Padhao_logo.jpg",
   },
   {
     name: "Pradhan Mantri Awas Yojana",
@@ -94,7 +96,7 @@ const scheme: SchemeInsert[] = [
     maritalStatus: "married",
     category: "OBC",
     schemeImage:
-      "https://source.unsplash.com/random/300x300?government+schemes",
+      "https://upload.wikimedia.org/wikipedia/en/6/6c/Pradhan_Mantri_Awas_Yojana-Urban_%28PMAY-U%29_logo.png",
   },
   {
     name: "Swachh Bharat Abhiyan",
@@ -112,7 +114,7 @@ const scheme: SchemeInsert[] = [
     maritalStatus: "unmarried",
     category: "SC",
     schemeImage:
-      "https://source.unsplash.com/random/300x300?government+schemes",
+      "https://upload.wikimedia.org/wikipedia/commons/0/08/PM_Modi_launches_the_Swachh_Bharat_Abhiyaan_%281%29.jpg",
   },
 ];
 
