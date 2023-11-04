@@ -1,9 +1,6 @@
-// "use client";
-import MainCaraousal from "~/components/pages/Home/Caraousal";
 import RecentlyViewed from "~/components/pages/Home/RecentlyViewed";
 import SchemeCard from "~/components/pages/Home/SchemeCard";
 import TopBar from "~/components/pages/shared/TopBar";
-import { Button } from "~/components/ui/button";
 import { SchemeInsert } from "~/server/db/schema";
 import { api } from "~/trpc/server";
 
@@ -19,15 +16,18 @@ const scheme: SchemeInsert[] = [
       "Automatically enrolled for students in eligible schools.",
     requiredDocs: "None",
     portalLink: "https://mdm.nic.in/",
-    gender: "all",
-    maritalStatus: "unmarried",
+    gender: "ALL",
+    maritalStatus: "Married",
     category: "SC",
     schemeImage:
       "https://schooleducation.mizoram.gov.in/uploads/attachments/16e79e148218c0afc8b81775c66cf2f1/png.png",
+    residence: "Rural",
+    isStudent: true,
+    employmentStatus: "Employed",
+    occupation: "Student",
   },
   {
     name: "Digital India",
-
     details:
       "A program to transform India into a digitally empowered society and knowledge economy.",
     benefits:
@@ -38,11 +38,15 @@ const scheme: SchemeInsert[] = [
       "Access digital services and contribute to the digital ecosystem.",
     requiredDocs: "None",
     portalLink: "https://digitalindia.gov.in/",
-    gender: "all",
-    maritalStatus: "married",
-    category: "SC",
+    gender: "ALL",
+    maritalStatus: "Never Married",
+    category: "OBC",
     schemeImage:
       "https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Digital_India_logo.svg/800px-Digital_India_logo.svg.png",
+    residence: "Urban",
+    isStudent: false,
+    employmentStatus: "Unemployed",
+    occupation: "Safai Karamchari",
   },
   {
     name: "National Rural Employment Guarantee Act (NREGA)",
@@ -56,12 +60,17 @@ const scheme: SchemeInsert[] = [
     applicationProcess: "Apply through local panchayats and Gram Sabhas.",
     requiredDocs: "Job card and identity proof.",
     portalLink: "https://nrega.nic.in/",
-    gender: "all",
-    maritalStatus: "married",
+    gender: "Male",
+    maritalStatus: "Divorced",
     category: "ST",
     schemeImage:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Burden_of_life.jpg/220px-Burden_of_life.jpg",
+    residence: "Urban",
+    isStudent: false,
+    employmentStatus: "Unemployed",
+    occupation: "Khadi Artisan",
   },
+
   {
     name: "Beti Bachao, Beti Padhao",
     details:
@@ -73,11 +82,15 @@ const scheme: SchemeInsert[] = [
       "Support gender equality and girls' education in society.",
     requiredDocs: "None",
     portalLink: "https://wcd.nic.in/bbbp-schemes",
-    gender: "female",
-    maritalStatus: "unmarried",
-    category: "ST",
+    gender: "Female",
+    maritalStatus: "Never Married",
+    category: "all",
     schemeImage:
       "https://upload.wikimedia.org/wikipedia/en/8/8c/Beti_Bachao_Beti_Padhao_logo.jpg",
+    residence: "Rural",
+    isStudent: true,
+    employmentStatus: "Self-Employed/ Entrepreneur",
+    occupation: "Teacher / Faculty",
   },
   {
     name: "Pradhan Mantri Awas Yojana",
@@ -92,12 +105,17 @@ const scheme: SchemeInsert[] = [
       "Apply through Common Service Centers or Housing societies.",
     requiredDocs: "Income proof, identity proof, and address proof.",
     portalLink: "https://pmaymis.gov.in/",
-    gender: "all",
-    maritalStatus: "married",
-    category: "OBC",
+    gender: "Transgender",
+    maritalStatus: "Widowed",
+    category: "ST",
     schemeImage:
       "https://upload.wikimedia.org/wikipedia/en/6/6c/Pradhan_Mantri_Awas_Yojana-Urban_%28PMAY-U%29_logo.png",
+    residence: "Urban",
+    isStudent: true,
+    employmentStatus: "Unemployed",
+    occupation: "Ex Servicemen",
   },
+
   {
     name: "Swachh Bharat Abhiyan",
     details:
@@ -110,11 +128,15 @@ const scheme: SchemeInsert[] = [
       "Participate in cleanliness drives and promote sanitation.",
     requiredDocs: "None",
     portalLink: "https://swachhbharat.mygov.in/",
-    gender: "all",
-    maritalStatus: "unmarried",
-    category: "SC",
+    gender: "Female",
+    maritalStatus: "Separated",
+    category: "ST",
     schemeImage:
       "https://upload.wikimedia.org/wikipedia/commons/0/08/PM_Modi_launches_the_Swachh_Bharat_Abhiyaan_%281%29.jpg",
+    residence: "Rural",
+    isStudent: false,
+    employmentStatus: "Employed",
+    occupation: "Student",
   },
 ];
 

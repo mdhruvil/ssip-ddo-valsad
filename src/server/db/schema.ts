@@ -55,15 +55,66 @@ export const schemes = sqliteTable(
     applicationProcess: text("applicationProcess").notNull(),
     requiredDocs: text("requiredDocs").notNull(),
     portalLink: text("portalLink").notNull(),
-    gender: text("gender", { enum: ["male", "female", "all"] }).default("all"),
+    gender: text("gender", {
+      enum: ["ALL", "Female", "Transgender", "Male"],
+    }).default("ALL"),
     maritalStatus: text("maritalStatus", {
-      enum: ["married", "unmarried", "all"],
-    }).default("all"),
+      enum: [
+        "Never Married",
+        "All",
+        "Divorced",
+        "Separated",
+        "Widowed",
+        "Married",
+      ],
+    }).default("All"),
     category: text("category", {
       enum: ["General", "OBC", "SC", "ST", "all"],
     }).default("all"),
     schemeImage: text("schemeImage").notNull(),
     department: text("department").default("DDO-Valsad").notNull(),
+    schemeCategory: text("schemeCategory", {
+      enum: [
+        "Social welfare & Empowerment",
+        "Education & Learning",
+        "Agriculture,Rural & Environment",
+        "Business & Entrepreneurship",
+        "Banking,Financial Services and Insurance",
+        "Skills & Employment",
+        "Health & Wellness",
+        "Sports & Culture",
+        "Housing & Shelter",
+        "Utility & Sanitation",
+        "Transport & Infrastructure",
+        "Science, IT & Communications",
+        "Travel & Tourism",
+        "Public Safety,Law & Justice",
+      ],
+    }).default("Agriculture,Rural & Environment"),
+    residence: text("residence", { enum: ["Both", "Rural", "Urban"] }).default(
+      "Both",
+    ),
+    diffrentlyAble: text("diffrentlyAble", { enum: ["No", "Yes"] }).default(
+      "No",
+    ),
+    isStudent: integer("isStudent", { mode: "boolean" })
+      .default(true)
+      .notNull(),
+    employmentStatus: text("employmentStatus", {
+      enum: ["All", "Employed", "Unemployed", "Self-Employed/ Entrepreneur"],
+    }).default("All"),
+    occupation: text("occupation", {
+      enum: [
+        "All",
+        "Student",
+        "Safai Karamchari",
+        "Artists",
+        "Ex Servicemen",
+        "Khadi Artisan",
+        "Teacher / Faculty",
+        "Unorganized Worker",
+      ],
+    }).default("All"),
   },
   (scheme) => ({
     schemeCreatedAtIdx: index("schemeCreatedAtIdx").on(scheme.createdAt),
